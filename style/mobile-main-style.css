@@ -1,0 +1,957 @@
+/* Media Query are at the end of Each section not at the very end of the file since its more convenient when its  grouped like that */
+
+:root {
+  --bg-color: rgb(0, 0, 0);
+  --highlight-color: rgb(0, 0, 0);
+    --gradient:linear-gradient(to bottom, rgb(0, 156, 218),rgb(134, 204, 251)) ;
+    --gradient-left:linear-gradient(to left, rgba(117, 216, 255, 0.82),rgba(255, 255, 255, 0.0));
+    --gradient-right:linear-gradient(to right, rgba(117, 216, 255, 0.82),rgba(255, 255, 255, 0.0));
+
+ }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    font-family: "Nunito Sans", sans-serif;
+    background-image: linear-gradient(to bottom, rgb(214, 243, 255)2%,rgb(240, 234, 255)30%, rgb(189, 217, 246), rgb(255, 255, 255)99%);
+    
+    font-weight: 600;
+    
+}
+
+
+
+                                    /* NAVIGATION  */
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.space{
+height: 100px;
+}
+.top-nav{
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+
+    width: 100%;
+    max-width: 790px;
+    padding: 1.6rem;
+    padding-left: 1rem;
+    z-index: 999;
+    
+    
+
+}
+.nav-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+
+
+
+.icon{
+    width: 214px;
+    height: 43px;
+
+}
+
+
+
+
+                                    /* NAVIGATION-HAMBURGER */
+
+li{
+    list-style: none;
+}
+
+.left-nav{
+    background-color: var(--bg-color);
+    display: grid;
+    grid-template-rows: auto ;
+    position: absolute;
+    top: 92px;
+    left: 0px;
+    visibility: hidden;
+    width: 100%;
+    height: 30rem;
+    padding-top: 2rem;
+    border-top: 0.4rem double rgb(255, 255, 255);
+    
+    
+
+}
+
+.left-nav .page-list{
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    padding-left: 3.5rem;
+    
+    
+    
+
+}
+.page-list a{
+    font-size: 2rem;
+    border-bottom: solid
+
+}
+
+.page-list a:hover{
+    color:var(--highlight-color) ;
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+
+}
+
+.page-list .what{
+    border-color: rgb(255, 255, 255);
+
+}
+
+.page-list .how{
+    border-color: rgb(185, 110, 255);
+
+}
+
+.page-list .model{
+    border-color: rgb(144, 222, 255);
+
+}
+
+.page-list .contact{
+    border-color: rgb(149, 149, 149);
+
+}
+
+.left-nav .other-list{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    justify-items: end;
+    padding-right: 2rem;
+}
+
+.other-list a{
+    font-size: 1.5rem;
+    border-bottom: solid;
+    
+}
+
+.other-list a:hover{
+    color: var(--highlight-color);
+    background-color: white;
+    
+}
+    
+
+
+#hamburger{
+    
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+}
+
+#hamburger-image{
+    /* ICON FROM: https://thenounproject.com/icon/hamburger-3053071/
+    
+    BY: Daniel Leonard From: Noun Project*/
+    content: url(../images/noun-hamburger-3053071.svg);
+    
+    padding: 0;
+    width: 30px;
+    height: 35px;
+    
+    /* https://www.w3schools.com/cssref/func_invert.php */
+    filter: invert(100%);
+}
+
+#hamburger-image:hover{
+    filter: invert(0%);
+    background-color: white;
+    border-radius: 0.3rem;
+}
+
+
+#hamburger:checked ~ .left-nav{
+    /* https://www.w3schools.com/cssref/sel_checked.php 
+        Idea from chatGPT*/
+    visibility: visible;
+
+
+}
+
+
+@media only screen and (min-width: 790px) {
+
+    .nav-flex input, .nav-flex label{
+        display: none;
+    }
+
+    .left-nav{
+        visibility: visible;
+        position: static;
+        z-index: 9;
+        height: auto;
+        padding: 0;
+        border-top: none;
+    }
+
+    .left-nav .page-list {
+        padding: 0;
+        grid-template-columns: repeat(4,auto);
+        grid-template-rows: none;
+        text-align: right;
+        gap: 0.2rem;
+    }
+
+    .page-list a{
+        font-size: 1rem;
+    }
+
+}
+
+                                    /* BANNER */
+
+.big-banner{
+    /* https://www.pexels.com/photo/a-man-in-white-long-sleeve-shirt-8721721/ */
+    background-image: url("../images/banner-vertical.jpg");
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: cover;
+    height: 50rem;
+    margin-top: -1rem;
+    
+    
+}
+
+.h1-banner{
+    color: white;
+    font-size: 2.5rem;
+    background-image: var(--gradient);
+    text-align: center;
+    padding: 1.5rem;
+    
+}
+
+.h1-banner img{
+    filter: invert(100%);
+    width: 20%;
+    
+}
+
+@media only screen and (min-width: 591px){
+    .big-banner{
+        display: none;
+    
+}
+    .h1-banner{
+    /* https://www.pexels.com/photo/futuristic-fashion-model-in-blue-light-8721825/ */
+    background-image: url("../images/banner-horizontal.jpg");
+    color: white;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vw;
+    max-height: 700px;
+    text-align:left;
+    display: flex;
+    justify-content: center;
+    padding-right: 40%;
+    padding-left: 0;
+    max-height: 412px;
+    
+    
+
+    
+    flex-direction: column;
+
+    
+
+}
+    .h1-banner br{
+    display: none;
+}
+    .h1-banner img{
+        display: none;
+    }
+
+    .h1-banner span{
+        background-image: linear-gradient(to right, rgba(70, 154, 187, 0.82),rgba(255, 255, 255, 0.0));
+        padding-left: 1.5rem;
+        height: 95%;
+        max-width: 470px;
+        display: flex;
+        align-items: center;
+        border-radius: 0.5rem;
+        
+        
+
+    }
+
+}
+
+                                    /* First Section GRID */
+.section-home h2{
+    font-size: 2rem;
+}
+
+.section-home p{
+    font-size: 1rem;
+}
+
+.section-home h3{
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-align: center;
+    
+}
+
+.mini p{
+    text-align: center;
+}
+
+.pmini p{
+    text-align: center;
+}
+
+.main-article div{
+    background-image: var(--gradient-right);
+}
+
+.main-article-rev div{
+    background-image: var(--gradient-left);
+}
+
+
+
+.section-home{
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    margin-top: 3rem;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: var(--bg-color);
+    border-width: 0.6rem;
+    
+
+}
+
+.section-home .main-article{
+
+    justify-self: center;
+    padding: 1rem;
+    margin: 1rem;
+
+    /* max-width: 380px; */
+
+}
+
+.section-home .main-article-rev{
+    
+    justify-self: center;
+    padding: 1rem;
+    width: 90%;
+    margin: 1rem;
+}
+
+.section-home figure{
+    justify-self: center;
+}
+
+.article-image{
+    width: 90vw;
+    height: 90vw;
+    margin-bottom: 5rem;
+}
+
+.mini, .pmini{
+    background-color: var(--bg-color);
+    color:white;
+    padding: 1rem;
+   
+}
+
+.mini-bottom{
+    margin-bottom: 5rem;
+}
+
+.article-image2{
+    width: 90vw;
+    height: 70vw;
+}
+
+
+@media only screen and (min-width: 591px) {
+    
+    .section-home{
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        margin-top: 3rem;
+        grid-template-columns: repeat(2, 1fr);
+        
+        
+}
+
+    .article-image{
+    width: 100%;
+    max-width: 289px;
+    height: auto;
+    margin-bottom: 0;
+    
+}
+    .section-home figure{
+        margin: 1rem;
+
+
+    
+}
+    .article-image2{
+    width: 100%;
+    max-width: 289px;
+    height: auto;
+}
+
+    .mini-bottom{
+    margin-bottom: 0;
+}
+
+    .main-article, .main-article-rev{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+
+
+
+}
+
+                                    /* BANNER 2 */
+
+.banner-2{
+    /* IMAGE FROM: https://www.pexels.com/video/humanoid-robot-moving-5854603/ */
+    background-image: url("../images/factory-robot.png");
+    background-repeat: no-repeat;
+    background-position:center ;
+    background-size: cover;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1rem;
+}
+
+.h2-banner{
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+    background-image: linear-gradient(to bottom, rgb(113, 86, 153),rgba(165, 146, 193, 1));
+    text-align: center;
+    padding: 1.5rem;
+    margin-top:3rem;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+}
+.h2-banner img{
+    filter: invert(100%);
+    width: 20%;
+}
+
+
+@media only screen and (min-width: 591px){
+    .banner-2{
+        display: none;
+    
+}
+    .h2-banner{
+    /* https://www.pexels.com/photo/futuristic-fashion-model-in-blue-light-8721825/ */
+    background-image: url("../images/factory-robot.png");
+    color: white;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vw;
+    max-height: 700px;
+    text-align:left;
+    display: flex;
+    justify-content: center;
+    padding-right: 40%;
+    padding-left: 0;
+    max-height: 412px;
+    
+    
+
+    
+    flex-direction: column;
+
+    
+
+}
+    .h2-banner br{
+    display: none;
+}
+    .h2-banner img{
+        display: none;
+    }
+
+    .h2-banner span{
+        background-image: linear-gradient(to right, rgba(132, 70, 187, 0.82),rgba(255, 255, 255, 0.0));
+        padding-left: 1.5rem;
+        height: 95%;
+        max-width: 470px;
+        display: flex;
+        align-items: center;
+        border-radius: 0.5rem;
+        
+        
+
+    }}
+
+
+                                    /* TABLE SECTION */
+.creation-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: var(--bg-color) ;
+    border-width: 0.6rem;
+
+    
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    
+}
+.creation-container h2{
+    background-color: rgb(243, 192);
+    color: white;
+    display: block;
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    padding: 1rem;
+    
+}
+
+.creation-div div, .creation-div h3 {
+    height: auto;
+    width: 100%;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    background-image: linear-gradient(to right, rgb(243, 192, 251),rgba(255, 255, 255, 0.0));
+    }
+.creation-div h3{
+    padding-bottom: 0;
+}
+.creation-div div{
+    padding-top: 0.5;
+}
+
+.creation-div .steps span{
+    font-size: 1.5rem;
+}
+.creation-div figure{
+    width: 100%;
+    max-width: 790px;
+  
+}
+.creation-div figure{
+    display: flex;
+    justify-content: center;
+
+}
+.creation-div figure img{
+    /* https://www.w3schools.com/css/css3_object-fit.asp */
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+    max-width: 550px;
+
+   
+    max-width: 790px;
+}
+
+
+                                    /* MODEL SECTION */
+.creation-container-2{
+    padding:0;
+    margin-bottom: 0;
+    
+    
+}
+.creation-container-2 h2{
+    margin-top: 3rem;
+    font-size: 2.5rem;
+}
+.creation-container-2 div{
+    display:flex;
+    flex-wrap: wrap;
+    border-radius: 0.3rem;
+    position: relative;
+    
+    
+    
+    
+    
+    
+}
+
+.creation-container-2 img{
+    width: 100%;
+    
+    
+    
+    
+}
+
+.creation-container-2 figure{
+    width: 100%;
+    
+    overflow: hidden;
+    
+
+}
+
+.creation-container-2 h3{
+    font-size: 1.5rem;
+}
+
+.companion-container{
+
+    background-color: #bdbec0;
+}
+
+.worker-container{
+    background-color: #1c1e14;
+}
+.agent-container{
+    background-color: #b5d3e7;
+    margin-bottom: 3rem;
+}
+
+.creation-container-2 article{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+}
+
+.companion-article{
+    background-color: rgba(61, 55, 48, 0.9);
+    
+}
+
+.worker-article{
+    background-color: rgba(234, 231, 147, 0.9);
+}
+
+.agent-article{
+    background-color: rgba(0, 27, 83, 0.9);
+}
+
+.creation-container-2 p, .creation-container-2 h3{
+    color:white;
+}
+
+.worker-article p, .worker-article h3{
+    color: black;
+}
+
+.worker-container figure{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.creation-container-2 h3{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.creation-container-2 article{
+    width: 100%;
+    
+}
+
+.creation-container-2 p::first-letter{
+    font-size: 1.3rem;
+}
+/* .creation-container-2 p{
+    display: none;
+} */
+
+
+@media only screen and (min-width: 591px){
+    .companion-container{
+    background-image: linear-gradient(to top, rgba(63, 63, 62, 0.7)2%,rgba(255, 255, 255, 0.0));
+    }
+
+    .creation-container-2 article{
+    width: 45%;
+    height: 90%;
+    align-self: center;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    
+    
+    
+    }
+
+
+    .creation-container-2 img{
+        margin-left: -1rem;
+        margin-bottom: -2rem;
+        width: 110%;
+        /* min-width: 598px; */
+    }
+
+    .creation-container-2 div{
+        overflow: hidden;
+        height: 20rem;
+    }
+    .creation-container-2 figure{
+        width: 100%;
+        /* height: 20rem; */
+        margin-left:7rem;
+        overflow: hidden;
+        
+        
+    }
+
+
+
+
+
+    .creation-container article div{
+        overflow: auto;
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scrollbars_styling */
+        scrollbar-width: thin;
+        
+        
+        display: block;
+        flex-grow: 1;
+        box-shadow: 0px 0px 6px 1px inset rgb(17, 17, 17);
+        position: relative;
+        padding: 0.5rem;
+    }
+}
+
+                                    /* BANNER 3 */
+.banner-3{
+    /* https://www.pexels.com/photo/woman-in-white-long-sleeve-shirt-8726736/ */
+    background-image: url("../images/banner-3-vert.jpg");
+    
+
+}
+
+.h2-banner-3{
+    background-image: linear-gradient(to bottom, rgb(53, 168, 225),rgba(102, 202, 251, 0.9));
+    
+
+}
+
+@media only screen and (min-width: 591px){
+    .banner-3{
+        display: none;
+    
+}
+    .h2-banner-3{
+    /* https://www.pexels.com/photo/green-neon-light-on-man-s-face-8726483/ */
+    background-image: url("../images/banner-3.jpg");
+
+}
+
+    .h2-banner-3 span{
+        background-image: linear-gradient(to right, rgba(35, 126, 195, 0.82),rgba(255, 255, 255, 0.0));
+
+}
+}
+
+                                    /* FORMS */
+input:hover::placeholder {
+    color: rgb(0, 0, 0);
+}
+input:hover{
+    filter: invert(100%);
+    
+}
+
+legend{
+    font-size: 2rem;
+    margin: 1rem;
+    border-bottom: solid white;
+    
+}
+.creation-container-form .form-container{
+   width: 80%;
+    max-width: 525px;
+   background-color: rgb(0, 0, 0) ;
+   color: white;
+   
+   padding-top: 1rem;
+   
+   
+}
+.creation-container-form{
+    border-top: none;
+    margin: 0;
+    border-bottom: none;
+    padding-top:3rem;
+}
+
+textarea{
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    
+}
+
+#subject{
+    width: 100%;
+}
+
+fieldset{
+    width: 100%;
+    border: none;
+
+    
+
+
+}
+.form-row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    
+}
+
+
+
+
+
+.form-row dl, .submit-reset input{
+    display: inline-block;
+    
+
+}
+
+dl{
+
+    margin: 0.5rem;
+}
+
+
+
+
+.form-row input::placeholder{
+    text-align: center;
+
+}
+
+.form-row input{
+    width: 100%;
+}
+input{
+    border-color: var(--bg-color);
+    border-style: solid;
+
+}
+.submit-reset {
+    padding: 0.5rem;
+}
+
+
+@media only screen and (min-width: 591px){
+    .form-row, .submit-reset{
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    .form-row dl, .submit-reset input{
+    flex: 1;
+}
+}
+
+                    /* FOOTER SECTION */
+
+
+.footer-container {
+    background-color: black;
+    color: white;
+    padding-top: 1.3rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}             
+.footer-container li, .footer-container p{
+    font-size: 0.8rem;
+    margin: 0.5rem;
+}       
+div.footer-logo{
+    background-image: url("../images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 214px;
+    height: 43px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* div.footer-logo:hover{
+    filter: invert(100%);
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+} */
+
+.footer-container a:hover{
+    color: black;
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+}
+
+
+@media only screen and (min-width: 790px){
+    .big-container{
+    max-width: 790px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
